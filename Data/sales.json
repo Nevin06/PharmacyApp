@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "medicineId": 2,
+    "medicineName": "Amoxicillin 250mg Capsules",
+    "quantitySold": 5,
+    "unitPrice": 120.5,
+    "saleDate": "2026-04-06T06:15:57.5035314Z"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "fullName": "Paracetamol 500mg Tablets",
+    "notes": "Used for fever and mild pain relief",
+    "expiryDate": "2026-04-20T00:00:00",
+    "quantity": 50,
+    "price": 25,
+    "brand": "Crocin"
+  },
+  {
+    "id": 2,
+    "fullName": "Amoxicillin 250mg Capsules",
+    "notes": "Antibiotic for bacterial infections",
+    "expiryDate": "2026-12-15T00:00:00",
+    "quantity": 3,
+    "price": 120.5,
+    "brand": "Mox"
+  },
+  {
+    "id": 3,
+    "fullName": "Cetirizine 10mg Tablets",
+    "notes": "Used for allergy relief",
+    "expiryDate": "2027-01-10T00:00:00",
+    "quantity": 30,
+    "price": 45.75,
+    "brand": "Zyrtec"
+  },
+  {
+    "id": 4,
+    "fullName": "Pantoprazole 40mg Tablets",
+    "notes": "Used for acid reflux and ulcers",
+    "expiryDate": "2026-09-05T00:00:00",
+    "quantity": 20,
+    "price": 85,
+    "brand": "Pantocid"
+  },
+  {
+    "id": 5,
+    "fullName": "Vitamin D3 60000 IU Sachets",
+    "notes": "Supplement for Vitamin D deficiency",
+    "expiryDate": "2026-11-25T00:00:00",
+    "quantity": 15,
+    "price": 150,
+    "brand": "Uprise D3"
+  }
+]

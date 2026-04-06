@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABC Pharmacy — Medicines</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>ABC Pharmacy</h1>
+    <p class="subtitle">Medicine inventory &amp; sales</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button type="button" class="tab active" data-tab="inventory" role="tab" aria-selected="true">Inventory</button>
+    <button type="button" class="tab" data-tab="add" role="tab">Add medicine</button>
+    <button type="button" class="tab" data-tab="sales" role="tab">Sales</button>
+    <button type="button" class="tab" data-tab="record-sale" role="tab">Record sale</button>
+  </nav>
+
+  <main>
+    <section id="panel-inventory" class="panel active" role="tabpanel">
+      <div class="toolbar">
+        <label class="search">
+          <span>Search by name</span>
+          <input type="search" id="search-medicines" placeholder="Type medicine name…" autocomplete="off" />
+        </label>
+        <button type="button" id="btn-refresh" class="btn secondary">Refresh</button>
+      </div>
+      <p class="legend">
+        <span class="pill pill-red">Expires in &lt; 30 days</span>
+        <span class="pill pill-yellow">Stock &lt; 10</span>
+      </p>
+      <div class="table-wrap">
+        <table class="grid" id="medicines-table">
+          <thead>
+            <tr>
+              <th>Full name</th>
+              <th>Brand</th>
+              <th>Expiry date</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="medicines-body"></tbody>
+        </table>
+      </div>
+      <p id="medicines-empty" class="empty hidden">No medicines match your search.</p>
+    </section>
+
+    <section id="panel-add" class="panel" role="tabpanel" hidden>
+      <h2>Add medicine</h2>
+      <form id="form-add-medicine" class="form-card">
+        <label>Full name <input type="text" name="fullName" required maxlength="500" /></label>
+        <label>Brand <input type="text" name="brand" required maxlength="200" /></label>
+        <label>Expiry date <input type="date" name="expiryDate" required /></label>
+        <label>Quantity <input type="number" name="quantity" min="0" step="1" required /></label>
+        <label>Price <input type="number" name="price" min="0" step="0.01" required /></label>
+        <label>Notes <textarea name="notes" rows="3" maxlength="4000"></textarea></label>
+        <button type="submit" class="btn">Save medicine</button>
+        <p id="add-message" class="message" role="status"></p>
+      </form>
+    </section>
+
+    <section id="panel-sales" class="panel" role="tabpanel" hidden>
+      <h2>Sale records</h2>
+      <div class="toolbar">
+        <button type="button" id="btn-refresh-sales" class="btn secondary">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table class="grid" id="sales-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Medicine</th>
+              <th>Qty sold</th>
+              <th>Unit price</th>
+              <th>Line total</th>
+            </tr>
+          </thead>
+          <tbody id="sales-body"></tbody>
+        </table>
+      </div>
+      <p id="sales-empty" class="empty hidden">No sales recorded yet.</p>
+    </section>
+
+    <section id="panel-record-sale" class="panel" role="tabpanel" hidden>
+      <h2>Record a sale</h2>
+      <form id="form-sale" class="form-card">
+        <label>
+          Medicine
+          <select name="medicineId" id="sale-medicine-select" required></select>
+        </label>
+        <label>Quantity to sell <input type="number" name="quantitySold" min="1" step="1" required /></label>
+        <button type="submit" class="btn">Record sale</button>
+        <p id="sale-message" class="message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Data stored as JSON on the server.</small>
+  </footer>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
